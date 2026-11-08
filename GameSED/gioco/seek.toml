@@ -7,9 +7,10 @@
 # - no SCE symbol database is used by this Ghidra script
 
 [general]
-input = "/home/lucoilbasso/Scaricati/Bounty Hunter - Seek & Destroy [NTSC-U] [SLUS-20606]/SLUS_206.06"
-output = "/home/lucoilbasso/Scaricati/gioco/output"
-ghidra_output = "/home/lucoilbasso/Scaricati/gioco/seek.csv"
+[general]
+input = "GameSED/gioco/SLUS_206.06"
+output = "GameSED/output"
+ghidra_output = "GameSED/gioco/seek.csv"
 single_file_output = false
 patch_syscalls = false
 patch_cop0 = true

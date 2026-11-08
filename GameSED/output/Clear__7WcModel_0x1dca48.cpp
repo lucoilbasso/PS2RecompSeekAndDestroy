@@ -1,0 +1,58 @@
+#include <stdexcept>
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include <ps2_recompiled_functions.h>
+#include <ps2_recompiled_stubs.h>
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: Clear__7WcModel
+// Address: 0x1dca48 - 0x1dca64
+void Clear__7WcModel_0x1dca48(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("Clear__7WcModel_0x1dca48");
+#endif
+
+    ctx->pc = 0x1dca48u;
+
+    // 0x1dca48: 0xac800034  sw          $zero, 0x34($a0)
+    ctx->pc = 0x1dca48u;
+    WRITE32(ADD32(GPR_U32(ctx, 4), 52), GPR_U32(ctx, 0));
+    // 0x1dca4c: 0xac800020  sw          $zero, 0x20($a0)
+    ctx->pc = 0x1dca4cu;
+    WRITE32(ADD32(GPR_U32(ctx, 4), 32), GPR_U32(ctx, 0));
+    // 0x1dca50: 0xac800024  sw          $zero, 0x24($a0)
+    ctx->pc = 0x1dca50u;
+    WRITE32(ADD32(GPR_U32(ctx, 4), 36), GPR_U32(ctx, 0));
+    // 0x1dca54: 0xac800028  sw          $zero, 0x28($a0)
+    ctx->pc = 0x1dca54u;
+    WRITE32(ADD32(GPR_U32(ctx, 4), 40), GPR_U32(ctx, 0));
+    // 0x1dca58: 0xac80002c  sw          $zero, 0x2C($a0)
+    ctx->pc = 0x1dca58u;
+    WRITE32(ADD32(GPR_U32(ctx, 4), 44), GPR_U32(ctx, 0));
+    // 0x1dca5c: 0x3e00008  jr          $ra
+    ctx->pc = 0x1DCA5Cu;
+    {
+        const uint32_t jumpTarget = GPR_U32(ctx, 31);
+        ctx->pc = 0x1DCA60u;
+        ctx->in_delay_slot = true;
+        ctx->branch_pc = 0x1DCA5Cu;
+        // 0x1dca60: 0xac800030  sw          $zero, 0x30($a0) (Delay Slot)
+        WRITE32(ADD32(GPR_U32(ctx, 4), 48), GPR_U32(ctx, 0));
+        ctx->in_delay_slot = false;
+        ctx->pc = jumpTarget;
+        #if defined(PS2X_STRICT_RETURN_DIAGNOSTICS) && PS2X_STRICT_RETURN_DIAGNOSTICS
+        (void)runtime->dispatchGuestBranch(rdram, ctx, jumpTarget, 0x1DCA5Cu, 0u, PS2Runtime::GuestBranchKind::Return, "JR $ra");
+        return;
+        #else
+        ctx->pc = jumpTarget;
+        return;
+        #endif
+    }
+    ctx->pc = 0x1DCA64u;
+}

@@ -1,0 +1,36 @@
+#include <stdexcept>
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include <ps2_recompiled_functions.h>
+#include <ps2_recompiled_stubs.h>
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: entry_00124078
+// Address: 0x124078 - 0x124088
+void entry_00124078_0x124078(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("entry_00124078_0x124078");
+#endif
+
+    ctx->pc = 0x124078u;
+
+    // 0x124078: 0xffb00000  sd          $s0, 0x0($sp)
+    ctx->pc = 0x124078u;
+    WRITE64(ADD32(GPR_U32(ctx, 29), 0), GPR_U64(ctx, 16));
+    // 0x12407c: 0xa0802d  daddu       $s0, $a1, $zero
+    ctx->pc = 0x12407cu;
+    SET_GPR_U64(ctx, 16, (uint64_t)GPR_U64(ctx, 5) + (uint64_t)GPR_U64(ctx, 0));
+    // 0x124080: 0xffb10008  sd          $s1, 0x8($sp)
+    ctx->pc = 0x124080u;
+    WRITE64(ADD32(GPR_U32(ctx, 29), 8), GPR_U64(ctx, 17));
+    // 0x124084: 0x80882d  daddu       $s1, $a0, $zero
+    ctx->pc = 0x124084u;
+    SET_GPR_U64(ctx, 17, (uint64_t)GPR_U64(ctx, 4) + (uint64_t)GPR_U64(ctx, 0));
+    ctx->pc = 0x124088u;
+}

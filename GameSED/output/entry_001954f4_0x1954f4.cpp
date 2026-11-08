@@ -1,0 +1,33 @@
+#include <stdexcept>
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include <ps2_recompiled_functions.h>
+#include <ps2_recompiled_stubs.h>
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: entry_001954f4
+// Address: 0x1954f4 - 0x195500
+void entry_001954f4_0x1954f4(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("entry_001954f4_0x1954f4");
+#endif
+
+    ctx->pc = 0x1954f4u;
+
+    // 0x1954f4: 0x8e020010  lw          $v0, 0x10($s0)
+    ctx->pc = 0x1954f4u;
+    SET_GPR_S32(ctx, 2, (int32_t)READ32(ADD32(GPR_U32(ctx, 16), 16)));
+    // 0x1954f8: 0x511025  or          $v0, $v0, $s1
+    ctx->pc = 0x1954f8u;
+    SET_GPR_U64(ctx, 2, GPR_U64(ctx, 2) | GPR_U64(ctx, 17));
+    // 0x1954fc: 0xae020010  sw          $v0, 0x10($s0)
+    ctx->pc = 0x1954fcu;
+    WRITE32(ADD32(GPR_U32(ctx, 16), 16), GPR_U32(ctx, 2));
+    ctx->pc = 0x195500u;
+}

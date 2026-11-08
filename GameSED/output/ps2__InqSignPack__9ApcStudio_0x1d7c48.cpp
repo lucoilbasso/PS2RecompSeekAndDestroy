@@ -1,0 +1,43 @@
+#include <stdexcept>
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include <ps2_recompiled_functions.h>
+#include <ps2_recompiled_stubs.h>
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: _InqSignPack__9ApcStudio
+// Address: 0x1d7c48 - 0x1d7c50
+void ps2__InqSignPack__9ApcStudio_0x1d7c48(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("ps2__InqSignPack__9ApcStudio_0x1d7c48");
+#endif
+
+    ctx->pc = 0x1d7c48u;
+
+    // 0x1d7c48: 0x3e00008  jr          $ra
+    ctx->pc = 0x1D7C48u;
+    {
+        const uint32_t jumpTarget = GPR_U32(ctx, 31);
+        ctx->pc = 0x1D7C4Cu;
+        ctx->in_delay_slot = true;
+        ctx->branch_pc = 0x1D7C48u;
+        // 0x1d7c4c: 0x24820374  addiu       $v0, $a0, 0x374 (Delay Slot)
+        SET_GPR_S32(ctx, 2, (int32_t)ADD32(GPR_U32(ctx, 4), 884));
+        ctx->in_delay_slot = false;
+        ctx->pc = jumpTarget;
+        #if defined(PS2X_STRICT_RETURN_DIAGNOSTICS) && PS2X_STRICT_RETURN_DIAGNOSTICS
+        (void)runtime->dispatchGuestBranch(rdram, ctx, jumpTarget, 0x1D7C48u, 0u, PS2Runtime::GuestBranchKind::Return, "JR $ra");
+        return;
+        #else
+        ctx->pc = jumpTarget;
+        return;
+        #endif
+    }
+    ctx->pc = 0x1D7C50u;
+}

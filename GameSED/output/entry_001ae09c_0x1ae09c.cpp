@@ -1,0 +1,27 @@
+#include <stdexcept>
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include <ps2_recompiled_functions.h>
+#include <ps2_recompiled_stubs.h>
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: entry_001ae09c
+// Address: 0x1ae09c - 0x1ae0a0
+void entry_001ae09c_0x1ae09c(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("entry_001ae09c_0x1ae09c");
+#endif
+
+    ctx->pc = 0x1ae09cu;
+
+    // 0x1ae09c: 0x24a2ff4f  addiu       $v0, $a1, -0xB1
+    ctx->pc = 0x1ae09cu;
+    SET_GPR_S32(ctx, 2, (int32_t)ADD32(GPR_U32(ctx, 5), 4294967119));
+    ctx->pc = 0x1ae0a0u;
+}

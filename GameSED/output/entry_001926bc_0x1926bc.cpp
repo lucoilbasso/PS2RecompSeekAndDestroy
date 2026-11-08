@@ -1,0 +1,113 @@
+#include <stdexcept>
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include <ps2_recompiled_functions.h>
+#include <ps2_recompiled_stubs.h>
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: entry_001926bc
+// Address: 0x1926bc - 0x192720
+void entry_001926bc_0x1926bc(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("entry_001926bc_0x1926bc");
+#endif
+
+    switch (ctx->pc) {
+        case 0x192714u: goto label_192714;
+        default: break;
+    }
+
+    ctx->pc = 0x1926bcu;
+
+    // 0x1926bc: 0x3c067000  lui         $a2, 0x7000
+    ctx->pc = 0x1926bcu;
+    SET_GPR_S32(ctx, 6, (int32_t)((uint32_t)28672 << 16));
+    // 0x1926c0: 0x8f848c60  lw          $a0, -0x73A0($gp)
+    ctx->pc = 0x1926c0u;
+    SET_GPR_S32(ctx, 4, (int32_t)READ32(ADD32(GPR_U32(ctx, 28), 4294937696)));
+    // 0x1926c4: 0x3c071100  lui         $a3, 0x1100
+    ctx->pc = 0x1926c4u;
+    SET_GPR_S32(ctx, 7, (int32_t)((uint32_t)4352 << 16));
+    // 0x1926c8: 0x8e250008  lw          $a1, 0x8($s1)
+    ctx->pc = 0x1926c8u;
+    SET_GPR_S32(ctx, 5, (int32_t)READ32(ADD32(GPR_U32(ctx, 17), 8)));
+    // 0x1926cc: 0x3c085000  lui         $t0, 0x5000
+    ctx->pc = 0x1926ccu;
+    SET_GPR_S32(ctx, 8, (int32_t)((uint32_t)20480 << 16));
+    // 0x1926d0: 0x2051823  subu        $v1, $s0, $a1
+    ctx->pc = 0x1926d0u;
+    SET_GPR_S32(ctx, 3, (int32_t)SUB32(GPR_U32(ctx, 16), GPR_U32(ctx, 5)));
+    // 0x1926d4: 0x2c0802d  daddu       $s0, $s6, $zero
+    ctx->pc = 0x1926d4u;
+    SET_GPR_U64(ctx, 16, (uint64_t)GPR_U64(ctx, 22) + (uint64_t)GPR_U64(ctx, 0));
+    // 0x1926d8: 0x31902  srl         $v1, $v1, 4
+    ctx->pc = 0x1926d8u;
+    SET_GPR_S32(ctx, 3, (int32_t)SRL32(GPR_U32(ctx, 3), 4));
+    // 0x1926dc: 0x2463ffff  addiu       $v1, $v1, -0x1
+    ctx->pc = 0x1926dcu;
+    SET_GPR_S32(ctx, 3, (int32_t)ADD32(GPR_U32(ctx, 3), 4294967295));
+    // 0x1926e0: 0xae23000c  sw          $v1, 0xC($s1)
+    ctx->pc = 0x1926e0u;
+    WRITE32(ADD32(GPR_U32(ctx, 17), 12), GPR_U32(ctx, 3));
+    // 0x1926e4: 0x9622000c  lhu         $v0, 0xC($s1)
+    ctx->pc = 0x1926e4u;
+    SET_GPR_ZE32(ctx, 2, (uint16_t)READ16(ADD32(GPR_U32(ctx, 17), 12)));
+    // 0x1926e8: 0xaca00004  sw          $zero, 0x4($a1)
+    ctx->pc = 0x1926e8u;
+    WRITE32(ADD32(GPR_U32(ctx, 5), 4), GPR_U32(ctx, 0));
+    // 0x1926ec: 0x461025  or          $v0, $v0, $a2
+    ctx->pc = 0x1926ecu;
+    SET_GPR_U64(ctx, 2, GPR_U64(ctx, 2) | GPR_U64(ctx, 6));
+    // 0x1926f0: 0xaca20000  sw          $v0, 0x0($a1)
+    ctx->pc = 0x1926f0u;
+    WRITE32(ADD32(GPR_U32(ctx, 5), 0), GPR_U32(ctx, 2));
+    // 0x1926f4: 0x8e230008  lw          $v1, 0x8($s1)
+    ctx->pc = 0x1926f4u;
+    SET_GPR_S32(ctx, 3, (int32_t)READ32(ADD32(GPR_U32(ctx, 17), 8)));
+    // 0x1926f8: 0xac670008  sw          $a3, 0x8($v1)
+    ctx->pc = 0x1926f8u;
+    WRITE32(ADD32(GPR_U32(ctx, 3), 8), GPR_U32(ctx, 7));
+    // 0x1926fc: 0x8e22000c  lw          $v0, 0xC($s1)
+    ctx->pc = 0x1926fcu;
+    SET_GPR_S32(ctx, 2, (int32_t)READ32(ADD32(GPR_U32(ctx, 17), 12)));
+    // 0x192700: 0x8e230008  lw          $v1, 0x8($s1)
+    ctx->pc = 0x192700u;
+    SET_GPR_S32(ctx, 3, (int32_t)READ32(ADD32(GPR_U32(ctx, 17), 8)));
+    // 0x192704: 0x481025  or          $v0, $v0, $t0
+    ctx->pc = 0x192704u;
+    SET_GPR_U64(ctx, 2, GPR_U64(ctx, 2) | GPR_U64(ctx, 8));
+    // 0x192708: 0xac62000c  sw          $v0, 0xC($v1)
+    ctx->pc = 0x192708u;
+    WRITE32(ADD32(GPR_U32(ctx, 3), 12), GPR_U32(ctx, 2));
+    // 0x19270c: 0xc06bd28  jal         func_1AF4A0
+    ctx->pc = 0x19270Cu;
+    SET_GPR_U32(ctx, 31, 0x192714u);
+    ctx->pc = 0x192710u;
+    ctx->in_delay_slot = true;
+    ctx->branch_pc = 0x19270Cu;
+    // 0x192710: 0x8e320008  lw          $s2, 0x8($s1) (Delay Slot)
+    SET_GPR_S32(ctx, 18, (int32_t)READ32(ADD32(GPR_U32(ctx, 17), 8)));
+    ctx->in_delay_slot = false;
+    ctx->pc = 0x1AF4A0u;
+    if (!runtime->dispatchGuestBranch(rdram, ctx, 0x1AF4A0u, 0x19270Cu, 0x192714u, PS2Runtime::GuestBranchKind::DirectCall, "JAL")) {
+        return;
+    }
+    ctx->pc = 0x192714u;
+label_192714:
+    // 0x192714: 0x3c031000  lui         $v1, 0x1000
+    ctx->pc = 0x192714u;
+    SET_GPR_S32(ctx, 3, (int32_t)((uint32_t)4096 << 16));
+    // 0x192718: 0x34639000  ori         $v1, $v1, 0x9000
+    ctx->pc = 0x192718u;
+    SET_GPR_U64(ctx, 3, GPR_U64(ctx, 3) | (uint64_t)(uint16_t)36864);
+    // 0x19271c: 0x0  nop
+    ctx->pc = 0x19271cu;
+    // NOP
+    ctx->pc = 0x192720u;
+}
